@@ -10,9 +10,9 @@ public class MemoryMemberRepository implements MemberRepository{
     private static long sequence = 0L; // key 값을 0,1,2 ... 생성해주는 얘
 
     @Override
-    public Member save(Member memeber) {
-        memeber.setId(++sequence);
-        store.put(memeber.getId(), memeber);
+    public Member save(Member member) {
+        member.setId(++sequence);
+        store.put(member.getId(), member);
         return member;
     }
 
@@ -32,5 +32,9 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore() {
+        store.clear();
     }
 }
