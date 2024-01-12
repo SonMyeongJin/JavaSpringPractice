@@ -1,6 +1,7 @@
 package myeongjinGroup.SpringPractice.service;
 
 import myeongjinGroup.SpringPractice.repository.JdbcMemberRepository;
+import myeongjinGroup.SpringPractice.repository.JdbcTemplateMemberRepository;
 import myeongjinGroup.SpringPractice.repository.MemberRepository;
 import myeongjinGroup.SpringPractice.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,8 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
         //return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+       // return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
 
     }
 }
