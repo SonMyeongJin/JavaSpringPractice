@@ -1,5 +1,6 @@
 package myeongjinGroup.SpringPractice.service;
 
+import jakarta.transaction.Transactional;
 import myeongjinGroup.SpringPractice.domain.Member;
 import myeongjinGroup.SpringPractice.repository.MemberRepository;
 import myeongjinGroup.SpringPractice.repository.MemoryMemberRepository;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class MemberService {
 
    // private final MemberRepository memberRepository = new MemoryMemberRepository();

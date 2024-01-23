@@ -1,8 +1,15 @@
 package myeongjinGroup.SpringPractice.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Member {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;      //key
+
+    @Column(name = "username")
     private String name;  // value
 
     public Long getId() {

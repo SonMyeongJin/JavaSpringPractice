@@ -1,13 +1,12 @@
 package myeongjinGroup.SpringPractice.repository;
 
 import myeongjinGroup.SpringPractice.domain.Member;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
 import java.util.Optional;
 
-public interface MemberRepository {
-    Member save(Member member);
-    Optional<Member> findById(Long id);
+public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Long>, MemberRepository {
+
+    @Override
     Optional<Member> findByname(String name);
-    List<Member> findAll();
 }
